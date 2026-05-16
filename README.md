@@ -106,15 +106,11 @@ Os datasources **Prometheus** e **Loki** já vêm provisionados automaticamente 
 
 ### 2. Importando o dashboard oficial do Claude Code
 
-A Anthropic publica um dashboard de referência. Para importá-lo:
+A Anthropic publica um dashboard de referência no Grafana.com com o ID **25255**. Para importá-lo:
 
 1. No Grafana, vá em **Dashboards → New → Import**.
-2. Você tem duas formas de importar:
-   - **Via ID do Grafana.com:** cole o ID do dashboard publicado pela Anthropic (procure por *"Claude Code"* em https://grafana.com/grafana/dashboards/) e clique em **Load**.
-   - **Via JSON:** baixe o JSON do dashboard (do repo oficial da Anthropic ou de https://grafana.com/grafana/dashboards/) e cole em **Import via panel json**.
-3. Quando o Grafana pedir, selecione:
-   - **Prometheus** → datasource `Prometheus` (já provisionado)
-   - **Loki** → datasource `Loki` (já provisionado)
+2. No campo **Import via grafana.com**, cole o ID `25255` e clique em **Load**.
+3. Quando o Grafana pedir o datasource, selecione **Prometheus** (já provisionado).
 4. Clique em **Import**.
 
 Se o dashboard usar variáveis como `team_id` ou `project`, elas serão populadas pelos labels gerados a partir do `OTEL_RESOURCE_ATTRIBUTES` configurado acima.
